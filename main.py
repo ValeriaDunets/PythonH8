@@ -31,7 +31,7 @@ data.close()
 #чтобы не писать в одном файле
 #для запроса данных у пользователя
 
-from loggers import find_data, new_data, correct_data #импортировать функуию из loggers
+from loggers import find_data, new_data, correct_data, delete_data, correction_data #импортировать функуию из loggers
 def interface():
     print('Здравствуйте')
     print('Вы находитесь в меню справочника')
@@ -39,7 +39,8 @@ def interface():
         '2 - новая запись\n'
         '3 - редактировать\n'
         '4 - удалить запись\n'
-        '5 - выйти из программы\n'   
+        '5 - изменение конкретных данных\n'
+        '6 - выйти из программы\n'   
         )
     while True:
         command = int(input("Введите номер команды: "))
@@ -51,8 +52,11 @@ def interface():
             new_data()
         elif command == 3:
             correct_data()
-
+        elif command == 4:
+            delete_data()
         elif command == 5:
+            correction_data()
+        elif command == 6:
             print("Всего хорошего ")
             return
 
